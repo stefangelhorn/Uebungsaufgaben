@@ -14,10 +14,46 @@ Wir wollen für unseren Fall die Funktion leicht verändern:
 
 int first_of_in_string(const char* chars, const char* string)
 
-Diese Funktion soll die Stelle des erste Aufzauchens eines der Zeichen aus chars in string zurückgeben. 
+Diese Funktion soll die Stelle des ersten Auftauchens eines der Zeichen aus chars in string zurückgeben. 
 Ist keines der Zeichen in string vorhanden, dann soll eine -1 zurückgegeben werden. 
 */
 
+/*Version 1
+#include <stdio.h>
+
+bool isOneOfGivenChars(char c, const char* chars)
+{
+    int i = 0;
+    while(chars[i] != '\0')
+    {
+        if(chars[i] == c)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+int first_of_in_string(const char* chars, const char* string)
+{
+    int index = 0;
+    int counter = 0;
+    while(string[index] != '\0')
+    {
+        if(isOneOfGivenChars(string[index], chars))
+        {
+            return counter;
+        }
+        counter++;
+    }
+        return (counter == 0 ? -1 : counter);
+}
+*/
+
+
+
+
+/* Version 2
 #include <iostream>
 
 
@@ -67,5 +103,6 @@ int main()
 
     printf("Eingegebener Name: %s %s\n", vorname, nachname);
 */
-  return 0;
-}
+//  return 0;
+//}
+
